@@ -1,0 +1,466 @@
+/* reset que o professor mandou usar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8e8e8;
+}
+
+/* banner verde em cima - tentei fazer igual */
+.banner-topo {
+    background-color: #2d6a2d;
+    height: 80px;
+    /* tinha uma foto mas nao consegui pegar do site */
+    background-image: linear-gradient(to right, #1a4d1a, #3a8a3a, #1a4d1a);
+}
+
+/* barra do breadcrumb */
+.breadcrumb-bar {
+    background-color: #2d5a1b;
+    padding: 14px 30px;
+    color: white;
+    font-size: 15px;
+}
+
+.breadcrumb-bar span {
+    color: #ccc;
+    font-size: 14px;
+}
+
+.breadcrumb-bar strong {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    margin-left: 8px;
+}
+
+/* container branco do meio */
+.container {
+    background-color: white;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 25px 30px;
+    min-height: 500px;
+}
+
+/* cabecalho da escola com botao */
+.escola-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.escola-info h1 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 12px;
+}
+
+.escola-info p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.8;
+}
+
+/* botao inscreva-se verde */
+/* esse "for" do label serve pra abrir o checkbox escondido - aprendi esse truque no youtube */
+.btn-inscreva {
+    background-color: #2d6a2d;
+    color: white;
+    border: none;
+    padding: 14px 22px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    white-space: nowrap;
+    text-decoration: none;
+    display: inline-block;
+    user-select: none;
+}
+
+.btn-inscreva:hover {
+    background-color: #1a4d1a;
+}
+
+.btn-inscreva::after {
+    content: " ›";
+    font-size: 18px;
+}
+
+/* caixa de cursos */
+.box-cursos {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.box-cursos h2 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+    padding: 15px 18px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* tabela de cursos */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table thead tr {
+    background-color: #2d5a1b;
+}
+
+table thead th {
+    color: white;
+    padding: 12px 18px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+table tbody tr:last-child {
+    border-bottom: none;
+}
+
+table tbody td {
+    padding: 14px 18px;
+    font-size: 14px;
+    color: #333;
+}
+
+.col-periodo {
+    text-align: right;
+}
+
+/* badges */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.badge-periodo {
+    background-color: #666;
+    color: white;
+}
+
+.badge-vagas {
+    background-color: #3a8a3a;
+    color: white;
+}
+
+/* barra verde embaixo */
+.footer-verde {
+    background-color: #2d5a1b;
+    height: 18px;
+}
+
+.footer {
+    background-color: #555;
+    color: #ccc;
+    text-align: center;
+    padding: 15px;
+    font-size: 12px;
+}
+
+
+/* ============================================ */
+/* FORMULARIO - fiz isso sozinho com CSS puro   */
+/* o truque e usar o checkbox escondido         */
+/* aprendi esse hack no stack overflow          */
+/* ============================================ */
+
+/* checkbox escondido que controla o formulario */
+#toggle-form {
+    display: none;
+}
+
+/* o fundo escuro atras do form - fica escondido por padrao */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 999;
+}
+
+/* quando o checkbox estiver marcado, mostra o overlay */
+#toggle-form:checked ~ .overlay {
+    display: block;
+}
+
+/* caixa branca do formulario */
+.formulario-box {
+    background-color: white;
+    width: 560px;
+    max-height: 88vh;
+    overflow-y: auto;
+    margin: 30px auto;
+    border-radius: 5px;
+    border-top: 5px solid #2d6a2d;
+    position: relative; /* pra posicionar o X */
+}
+
+/* cabecalho verde do form */
+.form-header {
+    background-color: #2d5a1b;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-header h2 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* botao X de fechar - tambem e um label do checkbox */
+.btn-fechar {
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    line-height: 1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-fechar:hover {
+    color: #ffaaaa;
+}
+
+/* corpo do formulario */
+.form-corpo {
+    padding: 22px 22px 10px 22px;
+}
+
+/* titulo de cada secao */
+.secao-titulo {
+    font-size: 12px;
+    font-weight: bold;
+    color: #2d5a1b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* cada campo */
+.campo {
+    margin-bottom: 14px;
+}
+
+.campo label {
+    display: block;
+    font-size: 13px;
+    color: #444;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* asterisco vermelho de obrigatorio */
+.obrigatorio {
+    color: red;
+}
+
+.campo input[type="text"] {
+    width: 100%;
+    padding: 9px 11px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 13px;
+    color: #333;
+}
+
+.campo input[type="text"]:focus {
+    border-color: #2d6a2d;
+    outline: none; /* tirei o azul feio do navegador */
+    box-shadow: 0 0 0 2px rgba(45, 106, 45, 0.15);
+}
+
+/* cpf e rg lado a lado */
+.linha-dupla {
+    display: flex;
+    gap: 13px;
+}
+
+.linha-dupla .campo {
+    flex: 1;
+}
+
+/* cidade e estado lado a lado */
+.linha-cidade-estado {
+    display: flex;
+    gap: 13px;
+}
+
+.campo-cidade {
+    flex: 2;
+    margin-bottom: 14px;
+}
+
+.campo-estado {
+    flex: 1;
+    margin-bottom: 14px;
+}
+
+.campo-cidade label,
+.campo-estado label {
+    display: block;
+    font-size: 13px;
+    color: #444;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.campo-cidade input[type="text"] {
+    width: 100%;
+    padding: 9px 11px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 13px;
+    color: #333;
+}
+
+.campo-cidade input[type="text"]:focus {
+    border-color: #2d6a2d;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(45, 106, 45, 0.15);
+}
+
+/* ======================================= */
+/* SELECT DE ESTADO PERSONALIZADO          */
+/* esse foi o mais dificil de fazer        */
+/* pesquisei bastante pra tirar a seta     */
+/* padrao e colocar uma personalizada      */
+/* ======================================= */
+.select-estado {
+    width: 100%;
+    padding: 9px 30px 9px 11px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 13px;
+    color: #333;
+    background-color: white;
+    cursor: pointer;
+
+    /* tirar seta padrao do sistema operacional */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    /* seta personalizada verde com SVG inline - aprendi isso no css tricks */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath fill='%232d5a1b' d='M5 7L0 2h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+.select-estado:focus {
+    border-color: #2d6a2d;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(45, 106, 45, 0.15);
+}
+
+/* divisor entre secoes */
+.divisor {
+    border: none;
+    border-top: 1px solid #ececec;
+    margin: 18px 0;
+}
+
+/* checkboxes dos cursos */
+.checkbox-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 5px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* cor do checkbox quando marcado */
+.checkbox-item input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #2d6a2d; /* essa propriedade e nova no css, o professor nem conhecia */
+    cursor: pointer;
+}
+
+/* rodape com os botoes */
+.form-rodape {
+    padding: 15px 22px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    background-color: #f8f8f8;
+    margin-top: 10px;
+}
+
+/* botao cancelar - tambem e um label pra desmarcar o checkbox */
+.btn-cancelar {
+    background-color: #999;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-size: 13px;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-cancelar:hover {
+    background-color: #777;
+}
+
+.btn-enviar {
+    background-color: #2d6a2d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn-enviar:hover {
+    background-color: #1a4d1a;
+}
+
+/* nota de campos obrigatorios */
+.nota-obrigatorio {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 16px;
+}

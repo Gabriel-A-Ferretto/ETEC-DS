@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vestibulinho ETEC - Elias Nechar</title>
+    <!-- aqui e onde a gente linka o arquivo css externo -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- TRUQUE DO CHECKBOX ESCONDIDO PRA ABRIR O FORM SEM JS -->
+    <!-- aprendi que da pra fazer isso so com CSS usando :checked -->
+    <input type="checkbox" id="toggle-form">
+
+    <!-- banner verde do topo -->
+    <div class="banner-topo"></div>
+
+    <!-- breadcrumb -->
+    <div class="breadcrumb-bar">
+        <span>Unidades e Cursos |</span>
+        <strong>Unidade</strong>
+    </div>
+
+    <!-- conteudo principal -->
+    <div class="container">
+
+        <div class="escola-header">
+            <div class="escola-info">
+                <h1>Etec Elias Nechar</h1>
+                <p>
+                    Rua Guariba, 800 - Jardim Bela Vista<br>
+                    CEP 15.806-355 - Catanduva/SP<br>
+                    Telefone: (17) 35318700<br>
+                    E-mail: e054dir@cps.sp.gov.br
+                </p>
+            </div>
+
+            <!-- label do checkbox = clica aqui, abre o form -->
+            <label for="toggle-form" class="btn-inscreva">Inscreva-se</label>
+        </div>
+
+        <div class="box-cursos">
+            <h2>Cursos oferecidos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Curso</th>
+                        <th style="text-align: right;">Período e Vagas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Administração</td>
+                        <td class="col-periodo">
+                            <span class="badge badge-periodo">Noite</span>
+                            <span class="badge badge-vagas">40 vagas</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Edificações</td>
+                        <td class="col-periodo">
+                            <span class="badge badge-periodo">Noite</span>
+                            <span class="badge badge-vagas">40 vagas</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Enfermagem</td>
+                        <td class="col-periodo">
+                            <span class="badge badge-periodo">Manhã</span>
+                            <span class="badge badge-vagas">40 vagas</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Mecânica</td>
+                        <td class="col-periodo">
+                            <span class="badge badge-periodo">Noite</span>
+                            <span class="badge badge-vagas">40 vagas</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div><!-- fim container -->
+
+
+    <!-- ============================================ -->
+    <!-- OVERLAY + FORMULARIO                         -->
+    <!-- aparece quando o checkbox estiver marcado    -->
+    <!-- ============================================ -->
+    <div class="overlay">
+        <div class="formulario-box">
+
+            <!-- cabecalho verde -->
+            <div class="form-header">
+                <h2>📋 Formulário de Inscrição</h2>
+                <!-- label do checkbox = clica aqui, fecha o form -->
+                <label for="toggle-form" class="btn-fechar" title="Fechar">✕</label>
+            </div>
+
+            <div class="form-corpo">
+
+                <p class="nota-obrigatorio">Campos com <span class="obrigatorio">*</span> são obrigatórios.</p>
+
+                <!-- DADOS PESSOAIS -->
+                <div class="secao-titulo">Dados Pessoais</div>
+
+                <div class="campo">
+                    <label>Nome Completo <span class="obrigatorio">*</span></label>
+                    <input type="text" placeholder="Digite seu nome completo">
+                </div>
+
+                <!-- CPF e RG lado a lado -->
+                <div class="linha-dupla">
+                    <div class="campo">
+                        <label>CPF <span class="obrigatorio">*</span></label>
+                        <input type="text" placeholder="000.000.000-00" maxlength="14">
+                    </div>
+                    <div class="campo">
+                        <label>RG <span class="obrigatorio">*</span></label>
+                        <input type="text" placeholder="00.000.000-0" maxlength="12">
+                    </div>
+                </div>
+
+                <hr class="divisor">
+
+                <!-- ENDERECO -->
+                <div class="secao-titulo">Endereço</div>
+
+                <div class="campo">
+                    <label>Endereço <span class="obrigatorio">*</span></label>
+                    <input type="text" placeholder="Rua, número, bairro">
+                </div>
+
+                <!-- cidade e estado lado a lado -->
+                <div class="linha-cidade-estado">
+                    <div class="campo-cidade">
+                        <label>Cidade <span class="obrigatorio">*</span></label>
+                        <input type="text" placeholder="Digite sua cidade">
+                    </div>
+                    <div class="campo-estado">
+                        <!-- SELECT PERSONALIZADO - tirei a seta padrao e coloquei uma verde -->
+                        <label>Estado <span class="obrigatorio">*</span></label>
+                        <select class="select-estado">
+                            <option value="">Selecione...</option>
+                            <option value="AC">AC - Acre</option>
+                            <option value="AL">AL - Alagoas</option>
+                            <option value="AP">AP - Amapá</option>
+                            <option value="AM">AM - Amazonas</option>
+                            <option value="BA">BA - Bahia</option>
+                            <option value="CE">CE - Ceará</option>
+                            <option value="DF">DF - Dist. Federal</option>
+                            <option value="ES">ES - Espírito Santo</option>
+                            <option value="GO">GO - Goiás</option>
+                            <option value="MA">MA - Maranhão</option>
+                            <option value="MT">MT - Mato Grosso</option>
+                            <option value="MS">MS - Mato Grosso do Sul</option>
+                            <option value="MG">MG - Minas Gerais</option>
+                            <option value="PA">PA - Pará</option>
+                            <option value="PB">PB - Paraíba</option>
+                            <option value="PR">PR - Paraná</option>
+                            <option value="PE">PE - Pernambuco</option>
+                            <option value="PI">PI - Piauí</option>
+                            <option value="RJ">RJ - Rio de Janeiro</option>
+                            <option value="RN">RN - Rio Grande do Norte</option>
+                            <option value="RS">RS - Rio Grande do Sul</option>
+                            <option value="RO">RO - Rondônia</option>
+                            <option value="RR">RR - Roraima</option>
+                            <option value="SC">SC - Santa Catarina</option>
+                            <option value="SP" selected>SP - São Paulo</option>
+                            <option value="SE">SE - Sergipe</option>
+                            <option value="TO">TO - Tocantins</option>
+                        </select>
+                    </div>
+                </div>
+
+                <hr class="divisor">
+
+                <!-- CURSOS -->
+                <div class="secao-titulo">Curso Desejado</div>
+                <p style="font-size: 12px; color: #888; margin-bottom: 14px;">Marque o(s) curso(s) que tem interesse:</p>
+
+                <div class="checkbox-grupo">
+                    <label class="checkbox-item">
+                        <input type="checkbox" value="informatica">
+                        Técnico em Informática
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" value="administracao">
+                        Técnico em Administração
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" value="enfermagem">
+                        Técnico em Enfermagem
+                    </label>
+                </div>
+
+            </div><!-- fim form-corpo -->
+
+            <!-- botoes -->
+            <div class="form-rodape">
+                <label for="toggle-form" class="btn-cancelar">Cancelar</label>
+                <button class="btn-enviar" type="button">Enviar Inscrição</button>
+            </div>
+
+        </div><!-- fim formulario-box -->
+    </div><!-- fim overlay -->
+
+
+    <!-- rodape -->
+    <div class="footer-verde"></div>
+    <div class="footer">
+        <p>© Centro Paula Souza - Todos os direitos reservados</p>
+    </div>
+
+</body>
+</html>
